@@ -3,22 +3,22 @@
     \centering
     \begin{tikzpicture}[mmat/.style={matrix of math nodes,column sep=-\pgflinewidth/2,
    row sep=-\pgflinewidth/2,cells={nodes={draw,inner sep=2pt,thin}},draw=#1,thick, inner sep=0pt},
-   mmat/.default=blue,
+   mmat/.default=green,
    node distance=0.3em]
    
  \matrix[mmat](mat1){
-         0 & 1 & 1 & |[draw=blue,thick,fill=blue!20,alias=1]| 1 & |[draw=blue,thick,fill=blue!20,alias=0]| 0 & |[draw=blue,thick,fill=blue!20,alias=]| 0 & 0 \\ 
-         0 & 0 & 1 & |[draw=blue,thick,fill=blue!20,alias=1]|1 & |[draw=blue,thick,fill=blue!20,alias=1]|1 &|[draw=blue,thick,fill=blue!20,alias=0]| 0 & 0 \\ 
-         0 & 0 & 0 & |[draw=blue,thick,fill=blue!20,alias=1]|1 &|[draw=blue,thick,fill=blue!20,alias=1]| 1 & |[draw=blue,thick,fill=blue!20,alias=1]|1 & 0 \\ 
+         0 & 1 & 1 & |[draw=green,thick,fill=green!20,alias=1]| 1 & |[draw=green,thick,fill=green!20,alias=0]| 0 & |[draw=green,thick,fill=green!20,alias=]| 0 & 0 \\ 
+         0 & 0 & 1 & |[draw=green,thick,fill=green!20,alias=1]|1 & |[draw=green,thick,fill=green!20,alias=1]|1 &|[draw=green,thick,fill=green!20,alias=0]| 0 & 0 \\ 
+         0 & 0 & 0 & |[draw=green,thick,fill=green!20,alias=1]|1 &|[draw=green,thick,fill=green!20,alias=1]| 1 & |[draw=green,thick,fill=green!20,alias=1]|1 & 0 \\ 
          0 & 0 & 0 & 1 & 1 & 0 & 0 \\ 
          0 & 0 & 1 & 1 & 0 & 0 & 0 \\ 
          0 & 1 & 1 & 0 & 0 & 0 & 0 \\ 
          0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
          };
- \node[fit=(mat1-1-4)(mat1-3-6),inner sep=0pt, draw, blue,thick, fill =blue, opacity = 0.2](f1){};        
+ \node[fit=(mat1-1-4)(mat1-3-6),inner sep=0pt, draw, green, thick, fill = green, opacity = 0.2](f1){};        
  
  \node[right=of mat1] (mul) {$*$};      
- \matrix[mmat=green,fill=green!20,right=of mul](mat2){    
+ \matrix[mmat=blue,fill=blue!30,right=of mul](mat2){    
      1 & 0 & 1 \\ 
      0 & 1 & 0 \\ 
      1 & 0 & 1 \\ };
@@ -31,7 +31,7 @@
      3 & 3 & 1 & 1 & 0 \\ 
  };
  \foreach \Anchor in {south west,north west,south east,north east}
- {\draw[green,densely dotted] (f1.\Anchor) -- (mat2.\Anchor); 
+ {\draw[blue,densely dotted] (f1.\Anchor) -- (mat2.\Anchor); 
  \draw[red,densely dotted] (4.\Anchor) -- (mat2.\Anchor);}
  \begin{scope}[on background layer]
   \fill[red!20] (f1.north west) rectangle (f1.south east);

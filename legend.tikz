@@ -1,5 +1,4 @@
-\begin{figure}[hp]
-    \centering
+
     
     \begin{tikzpicture}[ % GLOBAL CFG
     font=\sf \scriptsize,
@@ -84,6 +83,4 @@
     
     
     
-    \caption{Legend for LSTM walk trough. \textbf{I will centre this.}}
-    \label{fig:legend_lstm}
-\end{figure}
+
