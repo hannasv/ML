@@ -53,10 +53,10 @@
 
 %Start drawing the thing...    
     % Draw the cell: 
-    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=green!20] (first) at (-1.0, 0){\Large \textbf{A}}; 
-    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=green!20] (second) at (2.5, 0){\Large \textbf{A}};
-    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=green!20] (third) at (6,0){\Large \textbf{A}};
-    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=green!20] (fourth) at (11,0){\Large \textbf{A}};
+    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=cyan!50] (first) at (-1.0, 0){\Large \textbf{A}}; 
+    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=cyan!50] (second) at (2.5, 0){\Large \textbf{A}};
+    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=cyan!50] (third) at (6,0){\Large \textbf{A}};
+    \node [cell, minimum height =1.5cm, minimum width=2cm, fill=cyan!50] (fourth) at (11,0){\Large \textbf{A}};
 
 % Start connecting all.
     %Intersections and displacements are used. 
@@ -67,8 +67,8 @@
     %\draw [->, ArrowC1] (first) -- (second);
 
     %\node[ct, label={[mylabel]Cell state}] (c) at (-4,1.5) {\empt{c}{t-1}};
-    \node[ct, label={[mylabel]Hidden state}, fill = red!50] (h) at (-1, 2) {\large $h_{0}$}; % , fill=blue
-    \node[ct, label={[mylabel]below:Input}, fill = blue!50] (x) at (-1, -2) {\large $x_0$}; %, fill = magenta
+    \node[ct, label={[mylabel]Output}, fill = red!50] (h) at (-1, 2) {\large $h_{0}$}; % , fill=blue
+    \node[ct, label={[mylabel]below:Input}, fill = green!50] (x) at (-1, -2) {\large $x_0$}; %, fill = magenta
     \draw [->, ArrowC1] (x) -- (first);
     \draw [->, ArrowC1] (first) -- (h);
 
@@ -77,24 +77,24 @@
     %\draw [->, ArrowC1] (h -| ht)++(-0.5,0) -| (ht);
     %\draw [->, ArrowC1] (h -| ht)++(-0.5,0) -| (ht);
     
-    \node[ct, label={[mylabel]Hidden state}, fill = red!50] (h2) at (2.5, 2) {\large $h_{1}$};
-    \node[ct, label={[mylabel]below:Input}, fill = blue!50] (x2) at (2.5, -2) {\large $x_1$};
+    \node[ct, label={[mylabel]Output}, fill = red!50] (h2) at (2.5, 2) {\large $y_{1}$};
+    \node[ct, label={[mylabel]below:Input}, fill = green!50] (x2) at (2.5, -2) {\large $x_1$};
     \draw [->, ArrowC1] (x2) -- (second);
     \draw [->, ArrowC1] (second) -- (h2);
     
-    \node[ct, label={[mylabel]Hidden state},  fill = red!50] (h3) at (6, 2) {\large $h_{2}$};
-    \node[ct, label={[mylabel]below:Input}, fill = blue!50] (x3) at (6, -2) {\large $x_2$};
+    \node[ct, label={[mylabel]Output},  fill = red!50] (h3) at (6, 2) {\large $y_{2}$};
+    \node[ct, label={[mylabel]below:Input}, fill = green!50] (x3) at (6, -2) {\large $x_2$};
     \draw [->, ArrowC1] (x3) -- (third);
     \draw [->, ArrowC1] (third) -- (h3);
     
-    \node[ct, label={[mylabel]Hidden state},  fill = red!50] (ht) at (11, 2) {\large $h_{t}$};
-    \node[ct, label={[mylabel]below:Input}, fill = blue!50] (xt) at (11 , -2) {\large $x_t$};
+    \node[ct, label={[mylabel]Output},  fill = red!50] (ht) at (11, 2) {\large $y_{t}$};
+    \node[ct, label={[mylabel]below:Input}, fill = green!50] (xt) at (11 , -2) {\large $x_t$};
     \draw [->, ArrowC1] (xt) -- (fourth);
     \draw [->, ArrowC1] (fourth) -- (ht);  
     
-    \path[->, thick, black] (first) edge [out=90, in=180] (second);
-    \path[->, thick, black] (second) edge [out=90, in=180] (third);
-    \path[->, thick, gray, dashed] (third) edge [out=90, in=180] (fourth);
+    \path[->, thick, black] (first) edge [out=90, in=180] node[above, midway] {\Large $h_0$} (second) ;
+    \path[->, thick, black] (second) edge [out=90, in=180] node[above, midway] {\Large $h_1$} (third);
+    \path[->, thick, gray, dashed] (third) edge [out=90, in=180] node[above, midway] {} (fourth);
     %\path[->, thick, black] (third) edge [out=90, in=180] (fourth);
     
     %\draw (first) to [out=0, in=0,looseness=8] (first);

@@ -53,11 +53,11 @@
 
 %Start drawing the thing...    
     % Draw the cell: 
-    \node [cell, minimum height =1.5cm, minimum width=2cm, fill = green!30] (first) at (0,0){\Large \textbf{A}}; % , fill=green
+    \node [cell, minimum height =1.5cm, minimum width=2cm, fill = cyan!50] (first) at (0,0){\Large \textbf{A}}; % , fill=green
 
     %\node[ct, label={[mylabel]Cell state}] (c) at (-4,1.5) {\empt{c}{t-1}};
-    \node[ct, fill = red!50, scale = 2.25] (h) at (0, 2) {$h_{t}$}; % , fill=blue
-    \node[ct, fill = blue!50, scale = 2.25] (x) at (0, -2) { $x_t$}; %, fill = magenta
+    \node[ct, fill = red!50, scale = 2.25] (h) at (0, 2) {$y_{t}$}; % , fill=blue
+    \node[ct, fill = green!50, scale = 2.25] (x) at (0, -2) { $x_t$}; %, fill = magenta
     \draw [->, ArrowC1] (x) -- (first);
     \draw [->, ArrowC1] (first) -- (h);
 
@@ -68,8 +68,8 @@
 
     %\draw [->, ArrowC1] (first) -- (a) -- (d) -- (b)  -- (first);
      
-    \draw[-latex, thick] (first) to[out=110,in=180, loop] node[auto] {} (first);  
-    \draw[-latex, thick, white] (first) to[out=70,in=360, loop] node[auto] {} (first);  
+    \draw[-latex, thick, white] (first) to[out=110,in=180, loop] node[above] { \Large $h_t$} (first);  %
+    \draw[-latex, thick, black] (first) to[out=70,in=360, loop] node[auto] {\Large $h_t$} (first);  
 
     %\draw [->] (first) to[loop above] node[auto] {} (first);
     \end{tikzpicture}
