@@ -1,6 +1,5 @@
 
-    
-    \begin{tikzpicture}[ % GLOBAL CFG
+\begin{tikzpicture}[ % GLOBAL CFG
     font=\sf \scriptsize,
     >=LaTeX,
     scale = 0.89,
